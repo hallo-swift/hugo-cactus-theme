@@ -16,7 +16,16 @@
         </h2>
     </header>
     <section id="post-body">
+        {{ with .Params.Blurb }} {{ . }} <br><br> {{ end }}
+        {{ with .Params.Audio }}
+        <audio controls>
+            <source src="{{ . }}" type="audio/mpeg">
+        </audio>
+        <br><br>
+        {{ end }}
+
         {{ .Content }}
+
     </section>
 </article>
 
